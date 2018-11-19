@@ -31,7 +31,7 @@
                 v-model="hiddenInput">
         </div>
 
-        <p v-show="searchResults.length" class="typeahead">
+        <p :style="{'visibility': searchResults.length > 0}" class="typeahead">
             <span v-for="(tag, index) in searchResults"
                 :key="index"
                 v-text="tag.text"
@@ -406,5 +406,9 @@ export default {
 .typeahead > span {
     cursor: pointer;
     margin-right: 0.3rem;
+}
+
+.typeahead {
+	height: 1.5rem;
 }
 </style>
